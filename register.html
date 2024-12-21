@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="register-main">
+    <div class="signup-container">
+      <div class="register-container">
+        <h1 class="register-header">Create Account</h1>
+        <form action="" onsubmit="return validateRegisterForm()">
+          <label for="username">Username:</label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            class="username"
+            placeholder="Username"
+          />
+          <span id="nameError"> </span>
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="email"
+            placeholder="Email"
+          />
+          <span id="emailError"> </span>
+          <label for="phoneno">Phone no. :</label>
+          <input
+            type="number"
+            name="phoneno"
+            id="phoneno"
+            class="phoneno"
+            placeholder="Phone Number"
+          />
+          <span id="phoneError"></span>
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            class="password"
+            placeholder="Password"
+          />
+          <div id="passwordValidation">
+            <p id="capitalError" class="invalid">
+              Password must contain a capital letter.
+            </p>
+            <p id="specialError" class="invalid">
+              Password must contain special characters.
+            </p>
+            <p id="lengthError" class="invalid">
+              Password must contain more than 8 characters.
+            </p>
+            <p id="numberError" class="invalid">
+              Password must contain a number.
+            </p>
+          </div>
+          <label for="confirmPassword">Confirm Password:</label>
+          <input
+            type="password"
+            name="confirmPassword"
+            id="confirmPassword"
+            class="confirmPassword"
+            placeholder="Confirm Password"
+          />
+          <span id="cPasswordError"></span>
+          <input
+            type="submit"
+            value="Register"
+            name="registerBtn"
+            id="registerBtn"
+            class="registerBtn"
+          />
+          <hr />
+          <p>
+            Already have an account?
+            <a href="./login.html" id="sign-in-anchor">Sign In</a>
+          </p>
+        </form>
+      </div>
+    </div>
+    <script src="./scripts/jquery-3.7.1.min.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>

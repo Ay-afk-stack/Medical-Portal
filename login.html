@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <form action="">
+        <h2 class="login-header">Login</h2>
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          placeholder="Email"
+          name="email"
+          id="email"
+          class="email"
+        />
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          class="password"
+          placeholder="password"
+        />
+        <input
+          type="submit"
+          value="Login"
+          class="loginBtn"
+          id="loginBtn"
+          name="loginBtn"
+        />
+        <hr />
+        <p>
+          Don't have an account?
+          <a href="./register.html" id="sign-up-anchor">Create Account</a>
+        </p>
+      </form>
+    </div>
+    <script src="./scripts/jquery-3.7.1.min.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>

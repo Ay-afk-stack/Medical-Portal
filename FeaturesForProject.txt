@@ -1,0 +1,8 @@
+Features of LaphaSurgimed Portal:
+
+1. Login/Logout (Patients).
+2. Forgot Password.
+3. Enter Age, Weight , Height details.
+4. Enter Symptoms/Health Conditions.
+5. Return Possible Disease with Feedback.
+6. People Reviews and Feedback.

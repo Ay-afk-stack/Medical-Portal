@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.register-main {
+  min-height: 100vh;
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(247, 238, 238);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.signup-container {
+  background: linear-gradient(to bottom, rgb(196, 195, 195), white);
+  border-radius: 10px;
+  box-shadow: 10px 10px 50px grey;
+  min-width: 50%;
+}
+@media (min-width: 1000px) {
+  .signup-container {
+    min-width: 500px;
+  }
+}
+
+.register-container {
+  padding: 1.5rem;
+}
+.register-header,
+.login-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem 0;
+  color: black;
+  margin-bottom: 0.2rem;
+}
+
+.register-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.register-container form label {
+  color: black;
+}
+.register-container form input,
+.login-container form input {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid rgb(150, 150, 150);
+}
+.register-container form input:focus {
+  outline: 1px solid rgb(150, 150, 150);
+}
+
+.register-container form #registerBtn:enabled,
+.login-container form #loginBtn:enabled {
+  background: #131313;
+  color: white;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+.register-container form #registerBtn:hover,
+.login-container form #loginBtn:hover {
+  background: #343434;
+  transition: 300ms;
+  color: white;
+  cursor: pointer;
+}
+.register-container form #registerBtn:active,
+.login-container form #loginBtn:active {
+  background: #4e4e4e;
+  transition: 300ms;
+  color: white;
+  cursor: pointer;
+}
+.register-container form #registerBtn:disabled,
+.login-container form #loginBtn:disabled {
+  background: white;
+  color: black;
+  cursor: not-allowed;
+}
+#sign-in-anchor,
+#sign-up-anchor {
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+#passwordValidation .invalid {
+  color: red;
+}
+#passwordValidation .invalid:before {
+  content: "❌";
+}
+#passwordValidation .valid {
+  color: green;
+}
+#passwordValidation .valid:before {
+  content: "✅";
+}
+
+.login-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to bottom, gray, white);
+  justify-content: center;
+}
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid gray;
+  padding: 1.5rem;
+  background: transparent;
+  border-radius: 10px;
+  box-shadow: 10px 10px 50px gray;
+}
