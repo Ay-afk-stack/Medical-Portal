@@ -1,10 +1,10 @@
 //Registration Validation
 
-let unameValid = false;
-let emailValid = false;
-let phoneValid = false;
-let passwordValid = false;
-let cpasswordValid = false;
+var unameValid = false;
+var emailValid = false;
+var phoneValid = false;
+var passwordValid = false;
+var cpasswordValid = false;
 
 $(document).ready(
   $("#username").keyup(() => {
@@ -23,6 +23,7 @@ $(document).ready(
         unameValid = true;
       }
     }
+    toggleRegisterButton();
   }),
   $("#email").keyup(() => {
     const email = $("#email").val();
@@ -38,6 +39,7 @@ $(document).ready(
         emailValid = false;
       }
     }
+    toggleRegisterButton();
   }),
   $("#phoneno").keyup(() => {
     const phone = $("#phoneno").val();
@@ -45,9 +47,17 @@ $(document).ready(
       $("#phoneError").html("Phone number required!").css("color", "red");
       phoneValid = false;
     } else {
-      $("#phoneError").html("");
-      phoneValid = true;
+      if (phone.length === 10) {
+        $("#phoneError").html("");
+        phoneValid = true;
+      } else {
+        $("#phoneError")
+          .html("Phone number must be of 10 digits!")
+          .css("color", "red");
+        phoneValid = false;
+      }
     }
+    toggleRegisterButton();
   }),
   $("#password").keyup(() => {
     const password = $("#password").val();
@@ -90,9 +100,25 @@ $(document).ready(
           .css("color", "red");
         cpasswordValid = false;
       }
+      toggleRegisterButton();
     });
+    toggleRegisterButton();
   })
 );
+
+function toggleRegisterButton() {
+  if (
+    unameValid &&
+    phoneValid &&
+    emailValid &&
+    passwordValid &&
+    cpasswordValid
+  ) {
+    $("#registerBtn").removeAttr("disabled");
+  } else {
+    $("#registerBtn").attr("disabled", true);
+  }
+}
 
 function validateRegisterForm() {
   if (
@@ -104,6 +130,42 @@ function validateRegisterForm() {
   ) {
     return true;
   } else {
+    return false;
+  }
+}
+
+//login Validation
+
+let loginUsernameValid = false;
+let loginPasswordValid = false;
+
+$("#loginError").hide();
+
+$(document).ready(
+  $("#loginEmail").keyup(() => {
+    const username = $("#loginEmail").val();
+    if (username === "Ayush") {
+      loginUsernameValid = true;
+    } else {
+      loginUsernameValid = false;
+    }
+  }),
+  $("#loginPassword").keyup(() => {
+    const password = $("#loginPassword").val();
+    if (password === "Ayush@123") {
+      loginPasswordValid = true;
+    } else {
+      loginPasswordValid = false;
+    }
+  })
+);
+
+function validateLogin() {
+  if (loginUsernameValid && loginPasswordValid) {
+    alert("Logged IN");
+    return true;
+  } else {
+    $("#loginError").show();
     return false;
   }
 }

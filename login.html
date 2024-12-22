@@ -8,24 +8,25 @@
   </head>
   <body>
     <div class="login-container">
-      <form action="">
+      <form action="" onsubmit="return validateLogin()">
         <h2 class="login-header">Login</h2>
-        <label for="email">Email:</label>
+        <label for="email">Username or Email:</label>
         <input
-          type="email"
-          placeholder="Email"
-          name="email"
-          id="email"
-          class="email"
+          type="text"
+          placeholder="Username or Email"
+          name="loginEmail"
+          id="loginEmail"
+          class="loginEmail"
         />
         <label for="password">Password:</label>
         <input
           type="password"
-          name="password"
-          id="password"
-          class="password"
-          placeholder="password"
+          name="loginPassword"
+          id="loginPassword"
+          class="loginPassword"
+          placeholder="Password"
         />
+        <span id="loginError">Invalid Credentials</span>
         <input
           type="submit"
           value="Login"

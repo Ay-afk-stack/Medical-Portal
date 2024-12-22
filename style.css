@@ -57,7 +57,8 @@ input::-webkit-inner-spin-button {
   border-radius: 5px;
   border: 1px solid rgb(150, 150, 150);
 }
-.register-container form input:focus {
+.register-container form input:focus,
+.login-container form input:focus {
   outline: 1px solid rgb(150, 150, 150);
 }
 
@@ -122,7 +123,12 @@ input::-webkit-inner-spin-button {
   gap: 10px;
   border: 1px solid gray;
   padding: 1.5rem;
-  background: transparent;
+  background: whitesmoke;
   border-radius: 10px;
   box-shadow: 10px 10px 50px gray;
+}
+
+#loginError {
+  margin: 2px auto;
+  color: red;
 }
